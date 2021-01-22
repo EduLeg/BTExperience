@@ -12,7 +12,7 @@
                     <br>
                     
                     <tr>
-                    <th colspan="8">
+                    <th colspan="10">
                         <TABLE FRAME="void" RULES="cols" align="center">
 	                        <tr>
 		                        <td align="center"><a href="excel.php" class="btn btn-success">Convertir a excel</td>
@@ -27,7 +27,9 @@
                         <th>CORREO</th>
                         <th>ESCUELA</th>
                         <th>GRADO ESCOLAR</th>
-                        <th>TALLERES DE INTERÉS</th>
+                        <th>ETAPA DE EMPRENDIMIENTO</th>
+                        <th>CATEGORÍA DE EMPRENDIMIENTO</th>
+                        <th>TALLER</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -46,6 +48,8 @@
                         <td><?php echo $row['correo'];?></td>
                         <td><?php echo $row['escuela'];?></td>
                         <td><?php echo $row['grado'];?></td>
+                        <td><?php echo $row['etapa'];?></td>
+                        <td><?php echo $row['categoria'];?></td>
                         <td><?php echo $row['taller'];?></td>
 
                     </tr>

@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -146,8 +146,8 @@
             <var class="atc_date_end">2021-02-27 18:45:00</var>
             <var class="atc_timezone">Mexico</var>
             <var class="atc_title">BTExperience Online Bootcamp</var>
-            <var class="atc_description">Gather is a responsive event template with many awesome features including add
-              to my calendar feature. Awesome. huh?</var> 
+            <!--<var class="atc_description">Gather is a responsive event template with many awesome features including add
+              to my calendar feature. Awesome. huh?</var> -->
             <var class="atc_location">Online Event</var>
             <var class="atc_organizer"></var>
             <var class="atc_organizer_email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
@@ -703,63 +703,42 @@
                   </div>
                 </div>
               </div>
-              <div class="row" align="center">
-                <label>Talleres de interés</label>
-              </div>
-              <div class="col-sm-4" align="center">
-                <div class="form-group">
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" name="lista[]" value="Taller 1" required> Taller 1
-                    </label>
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <label>¿En qué etapa del emprendimiento te encuentras?</label>
+                    <select class="form-control" name="os1" required>
+                      <option value="Iniciando">No tengo idea</option>
+                      <option value="Idea">Ya tengo idea pero no la he implementado</option>
+                      <option value="Validado.prot">Ya tengo validación y prototipo, falta lanzarlo</option>
+                      <option value="Funcional.exp">Tengo un emprendimiento funcional y/o en experimentación</option>
+                    </select>
                   </div>
                 </div>
               </div>
-              <div class="col-sm-4" align="center">
-                <div class="form-group">
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" name="lista[]" value="Taller 2" required> Taller 2
-                    </label>
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <label>¿Qué categoría es el emprendimiento que tienes o te gustaría tener?</label>
+                    <select class="form-control" name="os2" required>
+                      <option value="Tradicional">Emprendimiento tradicional(finalidad de generar capital)</option>
+                      <option value="Social">Emprendimiento social(cambio social y la creación de valor para la sociedad)</option>
+                    </select>
                   </div>
                 </div>
               </div>
-              <div class="col-sm-4" align="center">
-                <div class="form-group">
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" name="lista[]" value="Taller 3" required> Taller 3
-                    </label>
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <label>Taller de interés</label>
+                    <select class="form-control" name="os3" required>
+                      <option value="Storytelling">Storytelling</option>
+                      <option value="Pitch">Pitch</option>
+                    </select>
                   </div>
                 </div>
               </div>
-              <div class="col-sm-4" align="center">
-                <div class="form-group">
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" name="lista[]" value="Taller 4" required> Taller 4
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4" align="center">
-                <div class="form-group">
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" name="lista[]" value="Taller 5" required> Taller 5
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4" align="center">
-                <div class="form-group">
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" name="lista[]" value="Taller 6" required> Taller 6
-                    </label>
-                  </div>
-                </div>
-              </div>
+              
 
               <div class="form-group">
                 <div class="checkbox">
