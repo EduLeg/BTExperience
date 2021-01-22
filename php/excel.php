@@ -17,6 +17,8 @@ include('conexion.php');
                         <th>CORREO</th>
                         <th>ESCUELA</th>
                         <th>GRADO</th>
+                        <th>ETAPA</th>
+                        <th>CATEGORIA</th>
                         <th>TALLER</th>
                         
                     </tr>
@@ -32,7 +34,10 @@ include('conexion.php');
                          <td>'.$row["correo"].'</td>
                          <td>'.$row["escuela"].'</td>
                          <td>'.$row["grado"].'</td>
+                         <td>'.$row["etapa"].'</td>
+                         <td>'.$row["categoria"].'</td>
                          <td>'.$row["taller"].'</td>  
+                         
                     </tr>
    ';
   }
