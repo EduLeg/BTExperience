@@ -7,21 +7,12 @@ include("php/conexion.php");
     $Correo= $_POST['email'];    
     $Escuela=$_POST['escuela'];
     $Grado=$_POST['os0'];
-    $Talleres= array();
-    $i=0;
-
-    if(!empty($_POST['lista'])){
-        foreach($_POST['lista'] as $taller){
-            $Talleres[]=$taller;
-            $talleres[]=',';
-            //print_r($Talleres);
-            $i=$i+1;
-            
-        }
-        //echo($Talleres);
-        $T = implode(",", $Talleres);
-        //echo($T);
-        $query= "INSERT INTO usuario(nombre,apellido,correo,escuela,grado,taller) VALUES('$Nombre','$Apellido','$Correo','$Escuela','$Grado','$T')";
+    $Etapa=$_POST['os1'];
+    $Categoria=$_POST['os2'];
+    $Taller=$_POST['os3'];
+    
+    
+    $query= "INSERT INTO usuario(nombre,apellido,correo,escuela,grado,etapa,categoria,taller) VALUES('$Nombre','$Apellido','$Correo','$Escuela','$Grado','$Etapa','$Categoria','$Taller)";
         $resultado= $pdo->query($query);
 
         if($resultado){
@@ -31,6 +22,5 @@ include("php/conexion.php");
         else{
             echo "Error, no pudo completarse el registro, intente más tarde.";
         }
-    }
 
 ?>
