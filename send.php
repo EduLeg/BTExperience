@@ -234,7 +234,7 @@ $mail = new PHPMailer(true);
                             <img src='/images/BTExperience-logo-dark.png'>
                             <h1>&iexcl;Bienvenid@ $Nombre&#33;</h1>
                             <h2>Gracias por inscribirte a esta grandiosa experiencia emprendedora</h2>
-                            <p>Estamos a unos d&iacute;as de iniciar BTExperience 2021. Recuerda que este evento se realizar&aacute; de manera digital en nuestro servidor <b class='b disc'>Discord</b>. En los siguientes d&iacute;as te estaremos compartiendo v&iacute;a correo la invitaci&oacute;n al servidor.</p>
+                            <p>Estamos a unos d&iacute;as de iniciar BTExperience 2021. Recuerda que este evento se realizar&aacute; de manera digital en nuestro servidor <b class='b disc'>Discord</b>. Utiliza el siguiente <a href='https://discord.gg/FfBugyfUuP'>enlace</a> para acceder.</p>
                             <p>Mientras tanto puedes disfrutar de nuestro contenido emprendedor, actualizaciones y noticias del evento en nuestra p&aacute;gina de <a rel='stylesheet' href='https://www.instagram.com/btexperience_/'>
                                 <b class='ins'>Instagram</b></a>.
                             </p>
