@@ -9,7 +9,6 @@ include 'CU.php';
 <body>
     <center><br/><br/></br>
         <form action="CU.php" method="POST">
-
             <input type="text"  name="Usuario" placeholder="usuario..." required/><br/></br>
             <input type="password"  name="CLAVE" placeholder="CLAVE..."required/><br/></br>
             <input type="submit" value="Aceptar" name="login"><br/></br>
