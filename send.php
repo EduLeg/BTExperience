@@ -9,9 +9,6 @@ include("php/config.php");
 include("php/conexion.php");
 // Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);
-
-
-
     $Nombre= $_POST['nombre'];
     $Apellido= $_POST['apellidos'];
     $Correo= $_POST['email'];    
@@ -21,19 +18,16 @@ $mail = new PHPMailer(true);
     $Categoria=$_POST['os2'];
     $Taller=$_POST['os3'];
     mb_http_output('UTF-8');
-    $Nombre = mb_substr($Nombre,0,15);
+    //$Nombre = mb_substr($Nombre,0,15);
     $query= "INSERT INTO usuario(nombre,apellido,correo,escuela,grado,etapa,categoria,taller) VALUES('$Nombre','$Apellido','$Correo','$Escuela','$Grado','$Etapa','$Categoria','$Taller')";
-
     $resultado= $pdo->query($query);
-
-    $clave='Rayoemprendedor28022020';//AQUÍ VA LA CONTRASEÑA DEL CORREO
-    $emisor= "bteexperience@gmail.com";//AQUÍ VA EL CORREO
+    $clave='C$j8TpYpxr75';//AQUÍ VA LA CONTRASEÑA DEL CORREO
+    $emisor= "noreply@btexperience.com.mx";//AQUÍ VA EL CORREO
     //$nombre="BTExperience";
-    $nom="BTExperience";
-    
+    $nom="BTExperience";  
     //$correo= $_POST["correo"];
     //$mensaje= "prueba";
-    header('Content-Type: text/html; charset=UTF-8');
+    //header('Content-Type: text/html; charset=UTF-8');
     $contenido="<!doctype html>";
     $contenido.="<html>";
     $contenido.="  <head>";
@@ -224,14 +218,13 @@ $mail = new PHPMailer(true);
     $contenido.="        <td class='container'>";
     $contenido.="          <div class='content'>";
     $contenido.="            <table class='main'>
-
                 <!-- START MAIN CONTENT AREA -->
                 <tr>
                     <td class='wrapper'>
                     <table border='0' cellpadding='0' cellspacing='0'>
                         <tr>
                         <td>
-                            <img src='/images/BTExperience-logo-dark.png'>
+                            <img src='http://btexperience.com.mx/images/BTExperience-logo-dark.png'>
                             <h1>&iexcl;Bienvenid@ $Nombre&#33;</h1>
                             <h2>Gracias por inscribirte a esta grandiosa experiencia emprendedora</h2>
                             <p>Estamos a unos d&iacute;as de iniciar BTExperience 2021. Recuerda que este evento se realizar&aacute; de manera digital en nuestro servidor <b class='b disc'>Discord</b>. Utiliza el siguiente <a href='https://discord.gg/FfBugyfUuP'>enlace</a> para acceder.</p>
@@ -244,10 +237,8 @@ $mail = new PHPMailer(true);
                     </table>
                     </td>
                 </tr>
-
                 <!-- END MAIN CONTENT AREA -->
                 </table>";
-
     $contenido.="            <!-- START FOOTER -->";
     $contenido.="            <div class='footer'>
                 <table border='0' cellpadding='0' cellspacing='0'>
@@ -258,8 +249,7 @@ $mail = new PHPMailer(true);
                     </tr>
                 </table>
                 </div>";
-    $contenido.="            <!-- END FOOTER -->";
-                
+    $contenido.="            <!-- END FOOTER -->";         
     $contenido.="          <!-- END CENTERED WHITE CONTAINER -->";
     $contenido.="          </div>";
     $contenido.="        </td>";
@@ -277,45 +267,42 @@ $mail = new PHPMailer(true);
                 //Server settings
                 //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
                 $mail->isSMTP();                                            // Send using SMTP
-                $mail->Host       = 'smtp.gmail.com';                       // Set the SMTP server to send through
+                $mail->Host       = 'mail.btexperience.com.mx';//'smtp.gmail.com';                       // Set the SMTP server to send through
                 $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
                 $mail->Username   = $emisor;                             // SMTP username
                 $mail->Password   = $clave;                               // SMTP password
-                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-                $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
-                $mail­->CharSet = "UTF­-8";
-                $mail­->Encoding = "quoted­printable"; 
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;// Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+                $mail->Port       = 465;                                 // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+                //$mail­->CharSet = 'UTF-8';
+                //$mail­->Encoding = 'quoted­printable'; 
                 //Recipients
-                $mail->setFrom($emisor, $nom);
-                $mail->addReplyTo($emisor, $nom);
+                $mail->setFrom($emisor,$nom);
+                //$mail->addReplyTo($emisor, $nom);
             
-                $mail->addAddress($Correo, $Nombre);     // Add a recipient
-                $mail->addCC($emisor);
+                $mail->addAddress($Correo,$Nombre);     // Add a recipient
+                $mail->addCC('bteexperience@gmail.com');
                 
-            
                 // Content
                 $mail->isHTML(true);                                  // Set email format to HTML
                 $mail->Subject = 'Registro confirmado';
                 $mail->Body    = $contenido;
                 //$mail->AltBody = $contenido;
                 //$mail->addAttachment("");
-            
                 $mail->send();
-                echo 'Registrado correctamente';
-                header("Location:gracias.html");
+                //echo 'Registrado correctamente';
+                header('Location:gracias.html');
             } catch (Exception $e) {
-                echo "Error, no es posible enviar el registro, vuelve a intentar. Mailer Error: {$mail->ErrorInfo}";
-                //header("Location:index.html");
+                //echo "Error, no es posible enviar el registro, vuelve a intentar. Mailer Error: {$mail->ErrorInfo}";
+                header('Location:index.html');
             }
-            header("Location: gracias.html");
-            die();
+            //header("Location: gracias.html");
+            //die();
+             //die();
         }
         else{
             //echo "Error, no es posible enviar el registro, vuelve a intentar. Mailer Error: {$mail->ErrorInfo}";
-
-            echo "Error, no pudo completarse el registro, intente más tarde.";
-            header("Location:index.html");
-            die();
+            //echo "Error, no pudo completarse el registro, intente más tarde.";
+            header('Location:index.html');
+            //die();
         }
-
 ?>
