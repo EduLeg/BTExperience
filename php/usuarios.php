@@ -36,6 +36,10 @@
                     <?php
                     include("config.php");
                     include("conexion.php");
+                    $sql = "SELECT COUNT(*) total FROM usuario";
+                    $result = $pdo->query($sql); //$pdo sería el objeto conexión
+                    $total = $result->fetchColumn();
+                    echo 'Número de total de registros: ' . $total;
                     
                     $query="SELECT * FROM usuario";
                     $resultado=$pdo->query($query);
