@@ -12,7 +12,7 @@
                     <br>
                     
                     <tr>
-                    <th colspan="10">
+                    <th colspan="11">
                         <TABLE FRAME="void" RULES="cols" align="center">
 	                        <tr>
 		                        <td align="center"><a href="excel.php" class="btn btn-success">Convertir a excel</td>
@@ -51,6 +51,8 @@
                         <td><?php echo $row['etapa'];?></td>
                         <td><?php echo $row['categoria'];?></td>
                         <td><?php echo $row['taller'];?></td>
+
+                        <th><a href="eliminar.php?ID=<?php echo $row['ID'];?>"class="btn btn-danger">Eliminar</a></th>
 
                     </tr>
                     <?php
