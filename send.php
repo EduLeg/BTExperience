@@ -231,7 +231,7 @@ $mail = new PHPMailer(true);
                             <p>Mientras tanto puedes disfrutar de nuestro contenido emprendedor, actualizaciones y noticias del evento en nuestra p&aacute;gina de <a rel='stylesheet' href='https://www.instagram.com/btexperience_/'>
                                 <b class='ins'>Instagram</b></a>.
                             </p>
-                            <h2 class='middle'>&iexcl;Te esperamos el d&iacute;a 27 y 28 de Febrero &#33;</h2>
+                            <h2 class='middle'>&iexcl;Te esperamos el d&iacute;a 26 y 27 de Febrero &#33;</h2>
                         </td>
                         </tr>
                     </table>
